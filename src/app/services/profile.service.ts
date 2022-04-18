@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ export class ProfileService {
     this.username = "DenisMuga";
   }
   getProfileInfo():Observable<any>{
-    return this.http.get<any>("https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" + this.clientsecret)
+    const url = `https://api.github.com/users/${this.username}?${environment.key}`
+    return this.http.get<any>(url);
     // .map(res => res.json());
   }
 }
