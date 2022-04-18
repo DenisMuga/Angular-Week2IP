@@ -15,7 +15,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     ProfileComponent,
   ],
   imports: [
-    NgModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
