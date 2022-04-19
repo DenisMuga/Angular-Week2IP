@@ -10,6 +10,7 @@ import { ProfileService } from '../../services/profile.service';
 export class ProfileComponent implements OnInit {
 
   users: any
+  repos: any
 
   constructor(private profileService: ProfileService) { 
 
@@ -24,6 +25,14 @@ export class ProfileComponent implements OnInit {
     this.profileService.getProfileInfo().subscribe(profile =>{
       console.log(profile);
       this.users = profile;
+
+    });
+  }
+
+  getUserRepo(){
+    this.profileService.getUserRepos().subscribe(repo =>{
+      console.log(repo);
+      this.repos = repo;
 
     });
   }
