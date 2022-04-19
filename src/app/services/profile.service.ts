@@ -21,4 +21,10 @@ export class ProfileService {
     return this.http.get<any>(url);
     // .map(res => res.json());
   }
+
+  getUserRepos():Observable<any>{
+    const url = `https://api.github.com/users/${this.username}/repos?${environment.key}`
+    return this.http.get<any>(url);
+  }
+  
 }
