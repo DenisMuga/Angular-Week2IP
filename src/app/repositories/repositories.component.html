@@ -1,0 +1,23 @@
+<div class="container">
+<div class="form-group mt-3 mb-3">
+    <label for="inputEmail4">Enter Repository Name</label>
+    <input type="text" class="form-control" name="search" placeholder="Search Repository Name Here"  [(ngModel)]="search" (keyup)="getRepositories()">
+  </div>
+
+<div class="repos">
+    <div *ngFor="let repo of repos" class="denis">
+        <div>
+            <img src="{{repo.owner.avatar_url}}" class="w-50" alt="">
+        </div>
+
+        <p class="text-success">Owner: <span class="text-dark">{{repo.owner.login}}</span></p>
+        <p> <span class="text-success"> Repo Name: </span>  <span class="text-dark"> {{repo.name}}</span></p>
+        <p class="text-success"> Langauge: <span class="text-dark" >{{repo.language}}</span></p>
+        <a href="{{repo.html_url}}" target="blank" class="btn btn-outline-danger">View Repositories</a>
+
+
+
+    </div>
+
+</div>
+</div>

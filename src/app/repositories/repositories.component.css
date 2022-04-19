@@ -1,0 +1,8 @@
+.repos{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    margin: 0 auto;
+}
+.denis{
+    border: 2px solid green;
+}
