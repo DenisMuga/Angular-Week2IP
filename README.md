@@ -1,14 +1,19 @@
-## By Denis Muga
+## Project Name
+GitHub Search App
+
+## Author Name
+Denis Muga
+
 ## Description
 GitHub Search App is an application where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
+
+## Setup/Installation requirements
+Clone or download and unzip the repository from https://github.com/DenisMuga/Angular-Week2IP. If you have git Use this command: git clone * to clone the project. Run ng serve from your terminal
 
 ## Behaviour Driven Development(BDD)
 INPUT                                             |   OUTPUT
 A User Enters UserName in the Profile Search Form | The App Displays Users GitHub Profile containing Picture, Name, Description Location et al.
 A User Enters a Repository Name in the Repo Search Form | The App Displays A List of Repositories With That Particular Search Name.
-
-## Setup/Installation requirements
-Clone or download and unzip the repository from https://github.com/DenisMuga/Angular-Week2IP. If you have git Use this command: git clone * to clone the project. Run ng serve from your terminal
 
 ## Live Demo
 To view the page click on the link below https://github.com/DenisMuga/Angular-Week2IP
