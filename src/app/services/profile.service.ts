@@ -9,8 +9,8 @@ import { environment } from 'src/environments/environment';
 export class ProfileService {
 
   private username!:string;
-  private clientid = '252a21e805fec95ffc2a';
-  private clientsecret = '167b7081cadd75169a679cf315fb7ce7881a49eb';
+  // private clientid ="";
+  // private clientsecret = string;
   private searchTerm!: string;
 
   constructor(private http:HttpClient) { 
@@ -19,13 +19,13 @@ export class ProfileService {
     // this.searchTerm = "pizza"
   }
   getProfileInfo():Observable<any>{
-    const url = `https://api.github.com/users/DenisMuga?${environment.key}`
+    const url = `https://api.github.com/users/${this.username}?${environment.key}`
     return this.http.get<any>(url);
     // .map(res => res.json());
   }
 
   getUserRepos():Observable<any>{
-    const url = `https://api.github.com/users/DenisMuga/repos?${environment.key}`
+    const url = `https://api.github.com/users/${this.username}/repos?${environment.key}`
     return this.http.get<any>(url);
   }
 
