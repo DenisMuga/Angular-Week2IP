@@ -1,9 +1,40 @@
 <div class="container">
-<h1>{{users.login}}</h1> 
-<p>{{users.bio}}</p>
-<a href="{{users.html_url}}" target="blank" class="btn btn-outline-danger">View on GitHub</a>
-<div>
-    <img src="{{users.avatar_url}}" alt="">
+    <div class="row">
+        <div class="col-md-6">
+<div class="form-group mb-5">
+    <label for="inputEmail4">Enter User Name</label>
+    <input type="text" class="form-control" name="searching" placeholder="Search UserName Here..." [(ngModel)]="searching" (keyup)="getProfiles()" (keypress)="getUserRepo()">
+  </div>
+<div class="bg-success rounded">
+    <div>
+        <img src="{{users.avatar_url}}" class="rounded img-thumbnail img-responsive w-50" alt="">
+    </div>
+<p> <span class="text-info">  User Name: </span>{{users.login}}</p> 
+<p> <span class="text-info">Description: </span>  {{users.bio}}</p>
+<p> <span class="text-info">GitHub Link: </span>  {{users.html_url}}</p>
+<p> <span class="text-info">Location: </span>  {{users.location}}</p>
+<p> <span class="text-info"> Repositories: </span>{{users.public_repos}}</p>
+<p> <span class="text-info"> Followers: </span>{{users.followers}}</p>
+<p> <span class="text-info"> Following: </span>{{users.following}}</p>
+<a href="{{users.html_url}}" target="blank" class="btn btn-outline-danger mb-3">View on GitHub</a>
+<p class="text-center">Designed by: <span class="text-warning"> &copy; Denis Muga: April 2022</span></p>
 </div>
-<p>{{users.public_repos}}</p>
 </div>
+<div class="col-md-6  bg-success rounded repoz">
+    <h4 class="text-center">Projects</h4>
+    <div *ngFor="let repo of repos" class="border border-dark mt-3 rounded bg-secondary opacity-100">  
+        <h6 class="text-info"> Title: <span class="text-dark" >{{repo.name}}</span></h6>
+        <h6 class="text-info ">Description: <span class="text-dark">{{repo.description}}</span></h6>
+        <a href="{{repo.html_url}}" target="blank" class="btn btn-outline-warning">View Repository</a>
+        <p class="text-info">Date Created: <span class="text-dark">{{repo.created_at|date}}</span></p>
+
+    </div>
+</div>
+</div>
+</div>
+
+<style>
+    .repoz{
+        margin-top: 8.5%;
+    }
+</style>
